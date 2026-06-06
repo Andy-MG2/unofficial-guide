@@ -52,4 +52,15 @@ def chunk_document(text, professor_name):
             })
         counter+=1
     return chunks
-print(chunk_document(documents[7]["text"], documents[7]["professor"] ))
+
+total_chunks = 0
+for i in range(len(documents)):
+    chunks = chunk_document(documents[i]["text"], documents[i]["professor"] )
+    print(chunks)
+    print()
+    for chunk in chunks:
+        total_chunks+=1
+
+print(f"\nTotal_CHUNKS: {total_chunks}")
+
+
