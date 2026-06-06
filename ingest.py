@@ -21,7 +21,6 @@ def load_documents():
     print(f"Loaded {len(documents)} RMP professor documents: {[d['professor'] for d in documents]}")
     return documents
 
-load_documents()
 
 def chunk_document(text, professor_name):
     '''
@@ -53,14 +52,17 @@ def chunk_document(text, professor_name):
         counter+=1
     return chunks
 
-total_chunks = 0
-for i in range(len(documents)):
-    chunks = chunk_document(documents[i]["text"], documents[i]["professor"] )
-    print(chunks)
-    print()
-    for chunk in chunks:
-        total_chunks+=1
 
-print(f"\nTotal_CHUNKS: {total_chunks}")
+#Test
+
+# total_chunks = 0
+# for i in range(len(documents)):
+#     chunks = chunk_document(documents[i]["text"], documents[i]["professor"] )
+#     print(chunks)
+#     print()
+#     for chunk in chunks:
+#         total_chunks+=1
+
+# print(f"\nTotal_CHUNKS: {total_chunks}")
 
 

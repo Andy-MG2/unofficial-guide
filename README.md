@@ -118,6 +118,11 @@
      results from an unrelated review" is an explanation. -->
 
 **Question that failed:**
+QUERY: Which BME professor is most recommended for caring about students?
+
+This is semantically close to reviews that mention caring or students in any context, including negative ones. "He doesn't care about students" is semantically similar to "caring about students" because the embedding model sees the same words regardless of sentiment.
+
+The Embedding models struggle to capture the concept of negation or sentiment — "cares about students" and "doesn't care about students" produce very similar vectors because the meaningful words are the same.
 
 **What the system returned:**
 
