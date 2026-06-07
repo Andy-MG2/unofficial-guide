@@ -41,10 +41,12 @@ def generate_response(query, retrieved_chunks):
         )
         return {
             "answer": response.choices[0].message.content,
-            "sources": sources
+            "sources": sources,
+            "chunks": retrieved_chunks,
         }
     except Exception as e:
         return {
             "answer": f"Error calling LLM: {str(e)}",
-            "sources": sources
+            "sources": sources,
+            "chunks": retrieved_chunks
         }

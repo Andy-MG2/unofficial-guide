@@ -26,7 +26,6 @@ query = st.text_input("Ask a question about a BME professor or course:")
 if st.button("Ask") and query:
     with st.spinner("Searching reviews..."):
         chunks = retrieve(query)
-        chunks = retrieve(query)
         result = generate_response(query, chunks)
 
     st.subheader("Answer")
@@ -38,3 +37,10 @@ if st.button("Ask") and query:
             st.write(f"• {source}")
     else:
         st.write("No sources retrieved.")
+    
+    st.subheader("Chunks")
+    with st.expander("Retrieved chunks"):
+        for chunk in result["chunks"]:
+            st.write(f"**{chunk['professor']}** (distance: {chunk['distance']:.4f})")
+            st.text(chunk['review'])
+            st.divider()

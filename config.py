@@ -19,4 +19,4 @@ CHROMA_COLLECTION = "professor_reviews"
 CHROMA_PATH = "./chroma_db"
 
 #Retrieval 
-N_RESULTS = 10
+N_RESULTS = 5
